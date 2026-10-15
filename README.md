@@ -51,7 +51,7 @@ Tested with HPLIP 3.23 and 3.26, cups-filters 2.0, CUPS 2.4.
 ## Install
 
 ```sh
-git clone https://github.com/imaustin/designjet-t130-linux.git
+git clone https://github.com/imaustinlittle/designjet-t130-linux.git
 cd designjet-t130-linux
 sudo bash install.sh 192.0.2.50          # your printer's IP or hostname
 lp -d DesignJet-T130 -o media=Letter some.pdf
