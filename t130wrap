@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+"""CUPS filter for the HP DesignJet T130 24-in.
+
+Runs HPLIP's hpcups (pcl3gui2 encoder) and patches its output to match what
+HP's Windows V4 driver (61.2509) sends, as observed in captured print jobs.
+
+Install into the CUPS filter directory, next to hpcups (root:root, mode 0755).
+install.sh does this.
+CUPS calls it as: t130wrap job user title copies options [file]
+"""
+import os
+import subprocess
+import sys
+
+# hpcups lives in the same CUPS filter directory this wrapper is installed in.
+HPCUPS = os.environ.get(
+    "T130_HPCUPS",
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "hpcups"),
+)
+
+# Configure Raster Data for one RGB component. hpcups' color-only CRD uses
+# 0x07 in the second byte; the Windows driver sends 0x1F for the same layout.
+CRD_HPCUPS = b"\x1b*g12W\x06\x07\x00\x01"
+CRD_WINDOWS = b"\x1b*g12W\x06\x1f\x00\x01"
+
+# hpcups sends a "media preload" (&l-2H) before raster data. The Windows driver
+# never does, and on the T130 it feeds the sheet out blank. Confirmed by test.
+PRELOAD = b"\x1b&l-2H"
+
+
+def log(msg):
+    sys.stderr.write(f"DEBUG: t130wrap: {msg}\n")
+
+
+def patch(data: bytes) -> bytes:
+    n = data.count(CRD_HPCUPS)
+    if n:
+        data = data.replace(CRD_HPCUPS, CRD_WINDOWS)
+    p = data.count(PRELOAD)
+    if p:
+        data = data.replace(PRELOAD, b"")
+    log(f"patched {n} CRD sequence(s), removed {p} preload(s), {len(data)} bytes out")
+    return data
+
+
+def main():
+    if len(sys.argv) not in (6, 7):
+        sys.stderr.write("ERROR: usage: t130wrap job user title copies options [file]\n")
+        return 1
+    proc = subprocess.run([HPCUPS] + sys.argv[1:], stdout=subprocess.PIPE)
+    if proc.returncode != 0:
+        sys.stderr.write(f"ERROR: t130wrap: hpcups exited {proc.returncode}\n")
+        return proc.returncode
+    out = patch(proc.stdout)
+    sys.stdout.buffer.write(out)
+    sys.stdout.buffer.flush()
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
