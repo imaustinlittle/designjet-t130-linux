@@ -1,0 +1,119 @@
+*PPD-Adobe: "4.3"
+*% HP DesignJet T130 24-in for hpcups (pcl3gui2) via t130wrap. Community PPD, not from HP. MIT license.
+*FormatVersion: "4.3"
+*FileVersion: "0.3.0"
+*LanguageVersion: English
+*LanguageEncoding: ISOLatin1
+*PCFileName: "hp-designjet-t130.ppd"
+*Product: "(HP DesignJet T130 24-in Printer)"
+*Manufacturer: "HP"
+*ModelName: "HP DesignJet T130 24-in"
+*ShortNickName: "HP DesignJet T130 hpcups"
+*NickName: "HP DesignJet T130 24-in, hpcups pcl3gui2 (community)"
+*PSVersion: "(3010.000) 0"
+*LanguageLevel: "3"
+*ColorDevice: True
+*DefaultColorSpace: RGB
+*FileSystem: False
+*Throughput: "1"
+*LandscapeOrientation: Plus90
+*TTRasterizer: Type42
+*RequiresPageRegion All: True
+*hpPrinterLanguage: "pcl3gui2"
+*HPMechOffset: "0"
+*1284DeviceID: "MFG:HP;MDL:HP DesignJet T130 24-in Printer;CMD:PCL3GUI,PCL3,PJL,JPEG,PCLM;CLS:PRINTER;"
+*cupsVersion: 2.4
+*cupsModelNumber: 0
+*cupsManualCopies: True
+*cupsFilter: "application/vnd.cups-raster 0 t130wrap"
+*cupsLanguages: "en"
+*UIConstraints: *OutputMode MaxDetail *MediaType Automatic
+*UIConstraints: *MediaType Automatic *OutputMode MaxDetail
+*OpenUI *PageSize/Media Size: PickOne
+*OrderDependency: 10 AnySetup *PageSize
+*DefaultPageSize: Letter
+*PageSize Letter/Letter 8.5x11in: "<</cupsInteger0 101/PageSize[612 792]/ImagingBBox null>>setpagedevice"
+*PageSize Legal/Legal 8.5x14in: "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+*PageSize Tabloid/Tabloid 11x17in: "<</cupsInteger0 101/PageSize[792 1224]/ImagingBBox null>>setpagedevice"
+*PageSize A4/A4 210x297mm: "<</cupsInteger0 101/PageSize[595.28 841.89]/ImagingBBox null>>setpagedevice"
+*PageSize A3/A3 297x420mm: "<</cupsInteger0 101/PageSize[841.89 1190.55]/ImagingBBox null>>setpagedevice"
+*PageSize A2/A2 420x594mm: "<</cupsInteger0 101/PageSize[1190.55 1683.78]/ImagingBBox null>>setpagedevice"
+*PageSize A1/A1 594x841mm: "<</cupsInteger0 101/PageSize[1683.78 2383.94]/ImagingBBox null>>setpagedevice"
+*PageSize ARCHC/Arch C 18x24in: "<</cupsInteger0 101/PageSize[1296 1728]/ImagingBBox null>>setpagedevice"
+*PageSize ARCHD/Arch D 24x36in: "<</cupsInteger0 101/PageSize[1728 2592]/ImagingBBox null>>setpagedevice"
+*PageSize AnsiC/ANSI C 17x22in: "<</cupsInteger0 101/PageSize[1224 1584]/ImagingBBox null>>setpagedevice"
+*PageSize AnsiD/ANSI D 22x34in: "<</cupsInteger0 101/PageSize[1584 2448]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageSize
+*OpenUI *PageRegion/Media Size: PickOne
+*OrderDependency: 10 AnySetup *PageRegion
+*DefaultPageRegion: Letter
+*PageRegion Letter/Letter 8.5x11in: "<</cupsInteger0 101/PageSize[612 792]/ImagingBBox null>>setpagedevice"
+*PageRegion Legal/Legal 8.5x14in: "<</cupsInteger0 101/PageSize[612 1008]/ImagingBBox null>>setpagedevice"
+*PageRegion Tabloid/Tabloid 11x17in: "<</cupsInteger0 101/PageSize[792 1224]/ImagingBBox null>>setpagedevice"
+*PageRegion A4/A4 210x297mm: "<</cupsInteger0 101/PageSize[595.28 841.89]/ImagingBBox null>>setpagedevice"
+*PageRegion A3/A3 297x420mm: "<</cupsInteger0 101/PageSize[841.89 1190.55]/ImagingBBox null>>setpagedevice"
+*PageRegion A2/A2 420x594mm: "<</cupsInteger0 101/PageSize[1190.55 1683.78]/ImagingBBox null>>setpagedevice"
+*PageRegion A1/A1 594x841mm: "<</cupsInteger0 101/PageSize[1683.78 2383.94]/ImagingBBox null>>setpagedevice"
+*PageRegion ARCHC/Arch C 18x24in: "<</cupsInteger0 101/PageSize[1296 1728]/ImagingBBox null>>setpagedevice"
+*PageRegion ARCHD/Arch D 24x36in: "<</cupsInteger0 101/PageSize[1728 2592]/ImagingBBox null>>setpagedevice"
+*PageRegion AnsiC/ANSI C 17x22in: "<</cupsInteger0 101/PageSize[1224 1584]/ImagingBBox null>>setpagedevice"
+*PageRegion AnsiD/ANSI D 22x34in: "<</cupsInteger0 101/PageSize[1584 2448]/ImagingBBox null>>setpagedevice"
+*CloseUI: *PageRegion
+*DefaultImageableArea: Letter
+*ImageableArea Letter/Letter 8.5x11in: "14.17 14.17 597.83 777.83"
+*ImageableArea Legal/Legal 8.5x14in: "14.17 14.17 597.83 993.83"
+*ImageableArea Tabloid/Tabloid 11x17in: "14.17 14.17 777.83 1209.83"
+*ImageableArea A4/A4 210x297mm: "14.17 14.17 581.11 827.72"
+*ImageableArea A3/A3 297x420mm: "14.17 14.17 827.72 1176.38"
+*ImageableArea A2/A2 420x594mm: "14.17 14.17 1176.38 1669.61"
+*ImageableArea A1/A1 594x841mm: "14.17 14.17 1669.61 2369.77"
+*ImageableArea ARCHC/Arch C 18x24in: "14.17 14.17 1281.83 1713.83"
+*ImageableArea ARCHD/Arch D 24x36in: "14.17 14.17 1713.83 2577.83"
+*ImageableArea AnsiC/ANSI C 17x22in: "14.17 14.17 1209.83 1569.83"
+*ImageableArea AnsiD/ANSI D 22x34in: "14.17 14.17 1569.83 2433.83"
+*DefaultPaperDimension: Letter
+*PaperDimension Letter/Letter 8.5x11in: "612 792"
+*PaperDimension Legal/Legal 8.5x14in: "612 1008"
+*PaperDimension Tabloid/Tabloid 11x17in: "792 1224"
+*PaperDimension A4/A4 210x297mm: "595.28 841.89"
+*PaperDimension A3/A3 297x420mm: "841.89 1190.55"
+*PaperDimension A2/A2 420x594mm: "1190.55 1683.78"
+*PaperDimension A1/A1 594x841mm: "1683.78 2383.94"
+*PaperDimension ARCHC/Arch C 18x24in: "1296 1728"
+*PaperDimension ARCHD/Arch D 24x36in: "1728 2592"
+*PaperDimension AnsiC/ANSI C 17x22in: "1224 1584"
+*PaperDimension AnsiD/ANSI D 22x34in: "1584 2448"
+*MaxMediaWidth: "1728"
+*MaxMediaHeight: "6480"
+*HWMargins: 14.17 14.17 14.17 14.17
+*CustomPageSize True: "pop pop pop <</PageSize[5 -2 roll]/ImagingBBox null>>setpagedevice"
+*ParamCustomPageSize Width: 1 points 216 1728
+*ParamCustomPageSize Height: 2 points 288 6480
+*ParamCustomPageSize WidthOffset: 3 points 0 0
+*ParamCustomPageSize HeightOffset: 4 points 0 0
+*ParamCustomPageSize Orientation: 5 int 0 0
+*OpenUI *InputSlot/Media Source: PickOne
+*OrderDependency: 10 AnySetup *InputSlot
+*DefaultInputSlot: Auto
+*InputSlot Auto/Auto-select (loaded paper): "<</MediaPosition 7>>setpagedevice"
+*CloseUI: *InputSlot
+*OpenUI *ColorModel/Output Mode: PickOne
+*OrderDependency: 10 AnySetup *ColorModel
+*DefaultColorModel: RGB
+*ColorModel RGB/Color: "<</cupsColorSpace 17/cupsBitsPerColor 8/cupsRowStep 0>>setpagedevice"
+*CloseUI: *ColorModel
+*OpenUI *MediaType/Media Type: PickOne
+*OrderDependency: 10 AnySetup *MediaType
+*DefaultMediaType: Automatic
+*MediaType Automatic/Use printer settings: "<</MediaType(Automatic)/cupsMediaType -1/cupsInteger6 1999>>setpagedevice"
+*MediaType Photo/Photo paper: "<</MediaType(Photo)/cupsMediaType 3/cupsInteger6 1711>>setpagedevice"
+*CloseUI: *MediaType
+*OpenUI *OutputMode/Print Quality: PickOne
+*OrderDependency: 10 AnySetup *OutputMode
+*DefaultOutputMode: Normal
+*OutputMode Normal/Normal: "<</OutputType(0)/HWResolution[600 600]>>setpagedevice"
+*OutputMode Best/Best: "<</OutputType(1)/HWResolution[600 600]>>setpagedevice"
+*OutputMode MaxDetail/Maximum detail (photo paper only): "<</OutputType(2)/HWResolution[600 600]>>setpagedevice"
+*CloseUI: *OutputMode
+*DefaultFont: Courier
+*% End of hp-designjet-t130.ppd
