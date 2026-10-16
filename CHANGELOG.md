@@ -3,6 +3,7 @@
 ## 0.4.0 (2026-10-16)
 - Add `InputSlot=Roll` (`ESC &l15H`), as the Windows driver sends for roll jobs. Auto-select stays the default.
 - Document that roll cutting is done by the printer, not the driver.
+- Verified on hardware: 24x36 poster printed from a 24 in roll (driver 0.3.0, auto-select) and cut cleanly at the end of the job.
 
 ## 0.3.0 (2026-10-15)
 - Strip hpcups' media preload (`ESC &l-2H`), which made the T130 feed pages out blank.
