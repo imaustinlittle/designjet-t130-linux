@@ -34,7 +34,9 @@ the full analysis.
 | Custom sizes up to 24 in wide | Working |
 | Media type: printer settings, photo paper | Working |
 | Grayscale mode | Not yet |
-| Explicit roll source, other media types | Not yet (auto-select works) |
+| Paper source: auto-select, roll | Working |
+| Roll cutting | Handled by the printer (front-panel cutter setting) |
+| Other media types | Not yet |
 
 Tested with HPLIP 3.23 and 3.26, cups-filters 2.0, CUPS 2.4.
 
@@ -62,7 +64,13 @@ The queue then shows up in every app's print dialog. To pick quality and media:
 ```sh
 lp -d DesignJet-T130 -o media=ARCHD -o OutputMode=Best poster.pdf
 lp -d DesignJet-T130 -o MediaType=Photo -o OutputMode=MaxDetail photo.pdf
+lp -d DesignJet-T130 -o media=ARCHD -o InputSlot=Roll -o fit-to-page poster.png
 ```
+
+The printer cannot print within about 5 mm of the edges, so use `fit-to-page`
+for artwork made at exactly the paper size. Roll jobs are cut by the printer
+itself; the driver sends no cut command (neither does HP's Windows driver).
+If roll prints come out uncut, check the cutter setting on the front panel.
 
 CUPS prints a "printer drivers are deprecated" warning when a PPD is used. It is
 harmless on CUPS 2.4.
