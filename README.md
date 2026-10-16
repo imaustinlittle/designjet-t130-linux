@@ -31,11 +31,13 @@ the full analysis.
 | Print quality Normal / Best | Working |
 | Maximum detail (1200 dpi output, photo paper) | Working, same commands as Windows |
 | Sizes Letter, Legal, Tabloid, A4 to A1, Arch C/D, ANSI C/D | Working |
+| 24x36 (Arch D) poster on 24 in roll | Verified on hardware |
 | Custom sizes up to 24 in wide | Working |
 | Media type: printer settings, photo paper | Working |
 | Grayscale mode | Not yet |
-| Paper source: auto-select, roll | Working |
-| Roll cutting | Handled by the printer (front-panel cutter setting) |
+| Paper source: auto-select | Verified on sheets and roll |
+| Paper source: roll (explicit) | Added in 0.4.0, not yet tested on hardware |
+| Roll cutting | Verified: the printer cuts at the end of each roll job |
 | Other media types | Not yet |
 
 Tested with HPLIP 3.23 and 3.26, cups-filters 2.0, CUPS 2.4.
