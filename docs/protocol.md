@@ -61,7 +61,7 @@ ESC *o5W 0B 01 00 00 00              grayscale flag (00 = color)
 ESC *o5W 0E 03 00 00 00              unknown, always 0 in captures
 ESC &u600D                           unit of measure
 ESC *o0M                             print mode
-ESC *o5W 0D 02 00 00 0x              00 or 01; 01 seen on pages with color
+ESC *o5W 0D 02 00 00 0x              page-content flag (varies per page; not cut)
 ESC *g12W 06 1F 00 01 02 58 02 58 0A 01 20 01   Configure Raster Data
 ESC *r6364S                          raster width in pixels
 ESC &l101A                           paper size 101 = custom
@@ -101,7 +101,12 @@ mode 2 tells the printer to place dots at 1200 dpi from 600 ppi input. The
 Windows driver only enables it with a photo media type.
 
 Paper source `&l15H` appeared when roll was selected explicitly; `7` is
-auto-select and works for both sheets and roll.
+auto-select and works for both sheets and roll. The PPD exposes both
+(`InputSlot=Auto`, `InputSlot=Roll`, MediaPosition 7 and 15).
+
+No cut command appears in any capture, roll jobs included. Cutting is a
+printer-side setting. `*o5W 0D 02` differs between roll captures but also
+varies on sheet jobs, so it is a page-content flag, not a cut flag.
 
 The Windows driver lays Letter out landscape (11 in across the 24 in roll).
 hpcups lays it out portrait, which is correct for sheets. Both print.
