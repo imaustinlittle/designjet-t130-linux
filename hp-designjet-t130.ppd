@@ -1,7 +1,7 @@
 *PPD-Adobe: "4.3"
 *% HP DesignJet T130 24-in for hpcups (pcl3gui2) via t130wrap. Community PPD, not from HP. MIT license.
 *FormatVersion: "4.3"
-*FileVersion: "0.3.0"
+*FileVersion: "0.4.0"
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "hp-designjet-t130.ppd"
@@ -96,6 +96,7 @@
 *OrderDependency: 10 AnySetup *InputSlot
 *DefaultInputSlot: Auto
 *InputSlot Auto/Auto-select (loaded paper): "<</MediaPosition 7>>setpagedevice"
+*InputSlot Roll/Roll: "<</MediaPosition 15>>setpagedevice"
 *CloseUI: *InputSlot
 *OpenUI *ColorModel/Output Mode: PickOne
 *OrderDependency: 10 AnySetup *ColorModel
